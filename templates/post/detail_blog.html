@@ -25,7 +25,7 @@
                             <a href="{% url 'edit-url' blog_post.slug %}" class="btn btn-info mr3">Edit</a>
                         {% endif %}
                         {% if blog_post.author == request.user %}
-                            <a href="{% url 'delete-blog-url' blog_post.slug %}" class="btn btn-dark">Delete</a>
+                            <a href="{% url 'delete-blog-url' blog_post.slug %}" class="btn btn-danger">Delete</a>
                         {% endif %}
                     </div>
 

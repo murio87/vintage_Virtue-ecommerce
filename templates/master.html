@@ -46,7 +46,7 @@
         width: 100%;
     }
     .main{
-        min-height: 90vh;
+        min-height: 60vh;
         height: 100%;
     }
     .footer-one .payment i:nth-child(1){
@@ -93,7 +93,7 @@
                         <a href="{% url 'home-url' %}">Home</a>
                         <a href="{% url 'profile-url' %}">Profile</a>
                         <a href="{% url 'logout-url' %}">Logout</a></p>
-                        <p style="color:orangered;">Welcome {{ request.user.username }}
+                        <p style="color: white; font-weight: 400;">Welcome {{ request.user.username }}
                             <a href="{% url 'subscrip-url' %}">Subscribe</a>
                         </p>
                     {% else %}

@@ -23,18 +23,21 @@
             <textarea readonly placeholder="What are you selling today?" name="" id="" cols="60" rows="0" style="padding: 5px"></textarea>
             <a href="{% url 'create-url' %}" class="btn btn-success mt-1" style="width: 200px; font-size:15px;font-weight: 500">Create a sell post</a>
         </div>
-        <div class="mt-2 mb-5 pb-4">
-            {% if blog_posts %}
-                {% for post in blog_posts %}
-                    <div class="container">
-                        {% include 'post/snippets/blog_post_snippet.html' with blog_post=post %}
-                    </div>
-                {% endfor %}
-            {% else %}
-                <div class="container">
-                    {% include 'post/snippets/blog_post_snippet.html' with query=query %}
-                </div>
+        <div>
+            {% if messages %}
+                <ul class="messages list-unstyled ">
+                    {% for message in messages %}
+                        <li  style="color: green;font-size: 30px; text-align: center" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
+        </div>
+        <div class="mt-2 mb-5 pb-4">
+            {% for post in blog_posts %}
+                <div class="container">
+                    {% include 'post/blog_post_snippet.html' with blog_post=post %}
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

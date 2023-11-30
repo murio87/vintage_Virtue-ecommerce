@@ -5,7 +5,7 @@ from post.models import BlogPost
 
 def home(request):
     context = {}
-    blog_posts = sorted(BlogPost.objects.all(), key=attrgetter('date_updated'), reverse=True)
+    blog_posts = sorted(BlogPost.objects.all(), key=attrgetter('date_publish'), reverse=True)
     context['blog_posts'] = blog_posts
     return render(request, 'index.html', context)
 
