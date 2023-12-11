@@ -14,20 +14,6 @@
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=1500350990535290" nonce="YOUR_NONCE"></script>
     <!--end of fontawesome-->
-    <div class="d-none">
-        {% if request.user.is_authenticated %}
-            <p style="color:orangered;">Welcome {{ request.user.first_name }} {{ request.user.last_name }}
-                <a href="{% url 'home-url' %}">Home</a>
-                <a href="{% url 'profile-url' %}">Profile</a>
-                <a href="{% url 'logout-url' %}">Logout</a></p>
-        {% else %}
-            </p>
-            <a href="{% url 'home-url' %}">Home</a>
-            <a href="{% url 'register-url' %}">Register</a>
-            <a href="{% url 'login-url' %}">Login</a>
-            </p>
-        {% endif %}
-    </div>
 </head>
 <style>
     .navbar-brand h3{
@@ -100,7 +86,6 @@
                     {% else %}
                         <p>
                             <a href="{% url 'home-url' %}">Home</a>
-                            <a href="{% url 'register-url' %}">Register</a>
                             <a href="{% url 'login-url' %}">Login</a>
                         </p>
                     {% endif %}
@@ -160,8 +145,8 @@
             <h4>Install App</h4>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <img style="width: 200px;margin-right: 5px;margin-bottom: 5px;margin-left: 5px;border-radius: 5px" src="{% static 'images/installation/appstoretwo.png' %}" alt="App Store">
-                <img style="width: 200px;border-radius: 5px;margin-bottom: 5px;margin-left: 5px" src="{% static 'images/installation/Googleplaytwo.jpg.png' %}" alt="Google Play">
+                <img class="img-fluid" style="width: 150px;margin-right: 5px;margin-bottom: 5px;margin-left: 5px;border-radius: 5px" src="{% static 'images/installation/appstoretwo.png' %}" alt="App Store">
+                <img class="img-fluid" style="width: 150px;border-radius: 5px;margin-bottom: 5px;margin-left: 5px" src="{% static 'images/installation/Googleplaytwo.jpg.png' %}" alt="Google Play">
             </div>
             <p>We Accept</p>
             <p class="payment"><i class="fa-brands payment"><img class="mpesa" src="{% static 'images/payments/mpesa.png' %}" alt=""></i> <i class="payment fa-brands fa-cc-mastercard"></i> <i class="payment fa-brands fa-cc-visa"></i> <i class="payment fa-brands fa-cc-paypal"></i></p>

@@ -3,7 +3,7 @@
 {% block content %}
     <style>
         .blo_post_home_feed{
-            background-color: #f2f2f2;
+            background-color: lightcyan;
             border-radius: 10px;
         }
     </style>
@@ -34,7 +34,7 @@
         </div>
         <div class="row">
             {% for post in blog_posts %}
-                <div class="col-6 d-flex">
+                <div class="col-lg-6  col-12 d-flex">
                     <div class="container mb-4">
                         {% include 'post/blog_post_snippet.html' with blog_post=post %}
                     </div>
